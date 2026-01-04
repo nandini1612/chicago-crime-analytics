@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Chicago Crime Analytics Design System - Professional Dashboard Theme */
+
+@layer base {
+  :root {
+    /* Professional Color Palette */
+    --background: 248 250 252;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Primary: Professional Teal */
+    --primary: 185 84% 44%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 185 84% 38%;
+
+    /* Accent: Muted Golden Yellow for highlights */
+    --accent: 42 78% 60%;
+    --accent-foreground: 215 25% 27%;
+    --accent-hover: 42 78% 54%;
+
+    /* Secondary: Light teal */
+    --secondary: 185 84% 94%;
+    --secondary-foreground: 185 84% 20%;
+
+    /* Muted tones */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Status colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 42 78% 52%;
+    --warning-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 185 84% 44%;
+
+    --radius: 8px;
+
+    /* Custom dashboard tokens */
+    --dashboard-bg: 248 250 252;
+    --sidebar-bg: 0 0% 100%;
+    --header-bg: 0 0% 100%;
+    --stat-card-bg: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(185 84% 44%), hsl(185 84% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(42 78% 60%), hsl(42 78% 72%));
+    --gradient-subtle: linear-gradient(180deg, hsl(185 84% 98%), hsl(185 84% 94%));
+    
+    /* Shadows */
+    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Dark theme for professional dashboard */
+    --background: 215 28% 17%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 28% 22%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 28% 22%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary: Bright teal in dark mode */
+    --primary: 185 84% 55%;
+    --primary-foreground: 215 28% 17%;
+    --primary-hover: 185 84% 48%;
+
+    /* Accent: Muted yellow in dark mode */
+    --accent: 42 78% 67%;
+    --accent-foreground: 215 28% 17%;
+    --accent-hover: 42 78% 60%;
+
+    --secondary: 215 28% 25%;
+    --secondary-foreground: 185 84% 80%;
+
+    --muted: 215 28% 25%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Status colors */
+    --success: 142 71% 50%;
+    --warning: 42 78% 57%;
+    --destructive: 0 84% 65%;
+
+    --border: 215 28% 28%;
+    --input: 215 28% 28%;
+    --ring: 185 84% 55%;
+
+    /* Custom dark theme tokens */
+    --dashboard-bg: 215 28% 17%;
+    --sidebar-bg: 215 28% 22%;
+    --header-bg: 215 28% 22%;
+    --stat-card-bg: 215 28% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[hsl(var(--dashboard-bg))] text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Dashboard Layout Components */
+  .dashboard-header {
+    @apply bg-[hsl(var(--header-bg))] border-b shadow-[var(--shadow-card)] backdrop-blur-sm;
+  }
+  
+  .dashboard-sidebar {
+    @apply bg-[hsl(var(--sidebar-bg))] border-r shadow-[var(--shadow-card)];
+  }
+  
+  .stat-card {
+    @apply bg-[hsl(var(--stat-card-bg))] rounded-xl shadow-[var(--shadow-card)] 
+           border border-border/50 transition-all duration-300 hover:shadow-[var(--shadow-lg)];
+  }
+  
+  .metric-value {
+    @apply text-3xl font-bold tracking-tight;
+  }
+  
+  .metric-label {
+    @apply text-sm font-medium text-muted-foreground uppercase tracking-wide;
+  }
+  
+  .trend-positive {
+    @apply text-[hsl(var(--success))] flex items-center gap-1 text-sm font-semibold;
+  }
+  
+  .trend-negative {
+    @apply text-[hsl(var(--destructive))] flex items-center gap-1 text-sm font-semibold;
+  }
+  
+  /* Interactive Elements */
+  .filter-button {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border 
+           bg-card text-card-foreground hover:bg-secondary/50 transition-colors;
+  }
+  
+  .primary-button {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg 
+           bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))]
+           hover:bg-[hsl(var(--primary-hover))] transition-all duration-200
+           font-semibold shadow-sm hover:shadow-md;
+  }
+  
+  .accent-button {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg 
+           bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))]
+           hover:bg-[hsl(var(--accent-hover))] transition-all duration-200
+           font-semibold shadow-sm hover:shadow-md;
+  }
+  
+  /* Chart Containers */
+  .chart-container {
+    @apply bg-card rounded-xl p-6 shadow-[var(--shadow-card)] border border-border/50;
+  }
+  
+  /* Animations */
+  .fade-in {
+    @apply animate-[fadeIn_0.5s_ease-out];
+  }
+  
+  .slide-up {
+    @apply animate-[slideUp_0.3s_ease-out];
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Gradient utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  /* Background patterns */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(185 84% 44%), hsl(185 84% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
