@@ -2,9 +2,9 @@
 
 A full-stack data analytics application for visualizing and forecasting crime patterns in Chicago. Built with React, TypeScript, Flask, and SQLite, this project demonstrates end-to-end data pipeline implementation from API integration to interactive visualization.
 
-![Chicago Crime Analytics Demo GIF](./docs/demo.gif)
+![Chicago Crime Analytics Demo GIF](./docs/images/dashboard.png)
 
-*Above: Chicago Crime Analytics's dashboard*
+*Above: A quick overview of the Chicago Crime Analytics project*
 
 ## Project Overview
 
@@ -128,6 +128,11 @@ CREATE INDEX idx_district ON crimes(district);
 
 #### Temporal Analysis
 
+![Temporal Trends](docs/images/temp1.png)
+*Temporal trends*
+![Crime Patterns](docs/images/crimepatterns.png)
+*Crime Patterns*
+
 **Moving Average Calculation**:
 ```python
 # 7-day simple moving average
@@ -156,6 +161,10 @@ This approach demonstrates:
 - Transparent handling of data limitations
 
 #### Spatial Analysis
+![Spatial Analysis Overview](docs/images/spatial.png)
+*Spatial Analysis Overview*
+![Chicago Crime Heatmap](docs/images/heatmap.png)
+*Chicago Crime Heatmap*
 
 **District Aggregation**:
 ```python
@@ -172,6 +181,8 @@ df.groupby('district').agg({
 - Properties include crime metadata for popup display
 
 #### Forecasting
+![7-Day Crime Forecast](docs/images/forecast.png)
+*7-day Crime Forecast*
 
 **Simple Moving Average (SMA) Implementation**:
 ```python
@@ -217,6 +228,12 @@ else:
 - Top 10 districts by crime volume identified
 
 ### 4. Frontend Implementation
+## UI Themes
+
+![Light Mode](docs/images/light_mode.png)
+*Light Mode*
+![Night Mode](docs/images/night_mode.png)
+*Night Mode*
 
 **State Management**:
 ```typescript
@@ -236,6 +253,7 @@ const useCrimeData = () => {
 ```
 
 **Leaflet Integration**:
+![Chicago Crime Heatmap](docs/images/heatmap.png)
 ```typescript
 // Heatmap layer initialization
 const heatData = crimeData.features.map(f => [
@@ -550,9 +568,9 @@ MIT License - See LICENSE file for details
 
 ## Contact
 
-- GitHub: [Your GitHub Profile]
-- LinkedIn: [Your LinkedIn Profile]
-- Email: [Your Email]
+- GitHub: https://github.com/nandini1612
+- LinkedIn: https://www.linkedin.com/in/nandini-saxena1111/
+- Email: nandinisaxenawork@gmail.com
 
 ## Acknowledgments
 
