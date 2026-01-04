@@ -2,13 +2,15 @@
 
 A full-stack data analytics application for visualizing and forecasting crime patterns in Chicago. Built with React, TypeScript, Flask, and SQLite, this project demonstrates end-to-end data pipeline implementation from API integration to interactive visualization.
 
-![Chicago Crime Analytics Demo GIF](./docs/images/dashboard.png)
-
-*Above: A quick overview of the Chicago Crime Analytics project*
+*A complete walkthrough of the project is available via GitHub Releases*
+[Watch / Download Full Demo Video (v1.0.0)](https://github.com/USERNAME/chicago-crime-analytics/releases/tag/v1.0.0)
 
 ## Project Overview
 
 This platform processes 50,000+ crime records from the Chicago Data Portal, providing temporal analysis, spatial distribution, and predictive forecasting through an interactive web interface. The system implements ETL pipelines, REST API design, time-series analysis, and geospatial visualization techniques.
+
+![Chicago Crime Analytics Demo GIF](./docs/images/dashboard.png)
+*Above: A quick overview of the Chicago Crime Analytics project*
 
 ### Key Features
 
